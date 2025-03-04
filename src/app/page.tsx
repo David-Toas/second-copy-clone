@@ -1,27 +1,41 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @next/next/no-html-link-for-pages */
+"use client";
+
+import { useState } from "react";
+
+// export default function Navbar() {
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="__className_f70e54 scroll-smooth">
-      <section className="bg-gray-900 pb-24">
+    <div className="__className_f70e54 scroll-smooth bg-[#041109]">
+      {/* header and hero  */}
+      <section className=" pb-24 lg:mx-26">
+        {/* header */}
         <section>
           <nav className="relative">
             <div className="container mx-auto px-4 font-display">
               <div className="relative flex h-24 items-center">
                 <a
-                  className="flex space-x-2 items-center text-white text-xl font-bold"
+                  className="flex gap-2 items-center text-white text-xl font-bold"
                   href="/"
                 >
                   <img
                     className="h-9 rounded-lg ring-2 ring-white mr-2"
                     src="/1secondcopy_icon.png"
-                    alt={``}
+                    alt=""
                   />
-                  <p>1SecondCopy</p>
+                  <p className="font-bold text-[20px] leading-[30px]">
+                    1SecondCopy
+                  </p>
                 </a>
-                <button className="lg:hidden navbar-burger flex items-center justify-center h-10 w-10 ml-auto border border-teal-900 bg-teal-200 bg-opacity-30 hover:bg-teal-700 rounded-lg">
+                <button
+                  onClick={() => setIsOpen(true)}
+                  className="lg:hidden navbar-burger flex items-center justify-center h-10 w-10 ml-auto border border-[#19251d] bg-[#19251d] bg-opacity-30 hover:bg-[#19251d] rounded-lg"
+                >
                   <svg
                     width={24}
                     height={24}
@@ -52,35 +66,37 @@ export default function Home() {
                     />
                   </svg>
                 </button>
+
                 <div className="hidden lg:flex ml-auto items-center">
                   <a
-                    className="inline-block text-white hover:text-teal-400 mr-10"
+                    className="inline-block text-white hover:text-emerald-200 mr-10 font-normal leading-[24px] text-[16px]"
                     href="/#how-it-works"
                   >
                     How it works
                   </a>
                   <a
-                    className="inline-block text-white hover:text-teal-400 mr-10"
+                    className="inline-block text-white hover:text-emerald-200 mr-10 font-normal leading-[24px] text-[16px]"
                     href="/#pricing"
                   >
                     Pricing
                   </a>
                   <a
-                    className="inline-block text-white hover:text-teal-400 mr-10"
+                    className="inline-block text-white hover:text-emerald-200 mr-10 font-normal leading-[24px] text-[16px]"
                     href="/blog"
                   >
                     Blog
                   </a>
                   <a
-                    className="inline-block text-white hover:text-teal-400"
+                    className="inline-block text-white hover:text-emerald-200"
                     href="/contact"
                   >
                     Contact Sales
                   </a>
                 </div>
+
                 <div className="hidden lg:block ml-12">
                   <a
-                    className="inline-flex items-center justify-center h-10 mr-4 px-4 text-center text-sm text-white font-semibold border border-gray-800 hover:bg-gray-900 rounded-lg"
+                    className="inline-flex items-center justify-center h-10 mr-4 px-4 text-center text-sm text-white font-semibold border border-gray-800 rounded-lg"
                     href="https://app.1secondcopy.com/login/"
                   >
                     Login
@@ -90,7 +106,7 @@ export default function Home() {
                     href="https://app.1secondcopy.com/"
                   >
                     <div className="inline-flex items-stretch h-10 p-0.5 rounded-lg bg-gradient-to-b from-gray-500 via-gray-700 to-gray-700 hover:to-gray-800">
-                      <div className="flex items-center px-4 bg-gray-700 group-hover:bg-opacity-40 rounded-md transition duration-300">
+                      <div className="flex items-center px-4 bg-[#3b5444] group-hover:bg-opacity-40 rounded-md transition duration-300">
                         <span>Get Started</span>
                       </div>
                     </div>
@@ -98,9 +114,70 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+            {/* Mobile menu */}
+            {isOpen && (
+              <div
+                className="fixed inset-0 bg-transparent backdrop-blur-none bg-opacity-50 z-40"
+                onClick={() => setIsOpen(false)}
+              ></div>
+            )}
+            <div
+              className={`fixed top-0 right-0 h-full w-3/4 md:w-1/2 bg-[#041109] text-white z-50 p-6 transform transition-transform duration-300 ease-in-out ${
+                isOpen ? "translate-x-0" : "translate-x-full"
+              }`}
+            >
+              <button
+                onClick={() => setIsOpen(false)}
+                className="absolute top-4 right-4 text-white hover:text-gray-300 mt-5 mr-4"
+              >
+                ✕
+              </button>
+              <nav className="flex flex-col mt-24 space-y-4 ml-3">
+                <a
+                  className="text-[#bfb691] text-sm hover:text-white mb-10"
+                  href="/#how-it-works"
+                >
+                  How it works
+                </a>
+                <a
+                  className="text-[#bfb691] text-sm hover:text-white mb-10"
+                  href="/#pricing"
+                >
+                  Pricing
+                </a>
+                <a
+                  className="text-[#bfb691] text-sm hover:text-white mb-10"
+                  href="/blog"
+                >
+                  Blog
+                </a>
+                <a
+                  className="text-[#bfb691] text-sm hover:text-white mb-10"
+                  href="/contact"
+                >
+                  Contact Sales
+                </a>
+                <a
+                  className="text-[#bfb691] text-sm hover:text-white mb-10"
+                  href="https://app.1secondcopy.com/login/"
+                >
+                  Login
+                </a>
+                <button
+                  className="xs:flex-shrink-0 group relative flex xs:inline-flex w-34 xs:w-auto items-center justify-center px-5 h-12 font-bold text-gray-900 bg-[#a3e33a] rounded-lg transition-all duration-300 focus:outline-none mt-16"
+                  type="submit"
+                >
+                  <div className="absolute top-0 left-0 w-full h-full rounded-lg ring ring-[#44660e] animate-pulse group-hover:ring-0 transition duration-300" />
+                  <div className="absolute inset-0 w-full h-full rounded-lg border-2 border-black pointer-events-none" />
+                  <span>Get Started</span>
+                </button>
+              </nav>
+            </div>
           </nav>
         </section>
-        <div className="relative pt-12 md:pt-24">
+        {/* hero */}
+        <div className="relative pt-12 md:pt-24 mt-2">
           <div className="container px-4 mx-auto">
             <div className="relative max-w-lg md:max-w-3xl mx-auto text-center">
               <h1 className="tracking-tight text-4xl xs:text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6">
@@ -110,30 +187,31 @@ export default function Home() {
                   with a <span className="underline">twist</span>.
                 </span>
               </h1>
-              <p className="md:max-w-md lg:max-w-lg mx-auto text-lg text-gray-400 mb-10">
+              <p className="md:max-w-md lg:max-w-lg mx-auto text-lg text-gray-400 mb-8">
                 We hired the top 1% of writers so you don't have to. Get high
                 quality articles &amp; posts in just 3 days.
               </p>
-              <div className="xs:flex items-center max-w-md mx-auto mb-6">
+              <div className="xs:flex lg:flex flex justify-center gap-3 max-w-md mx-auto mb-2">
                 <input
-                  className="w-full h-12 mb-3 xs:mb-0 xs:mr-3 p-3 text-gray-400 placeholder-gray-500 bg-gray-800 outline-none ring ring-transparent focus:ring-yellowGreen-700 rounded-lg"
+                  className="w-full h-12 mb-3 xs:mb-0 xs:mr-3 p-3 text-gray-400 placeholder-gray-500 bg-[#19251d] outline-none ring ring-transparent focus:ring-[#a3e33a] focus:ring-3 rounded-lg"
                   type="email"
                   placeholder="Your email"
                   id="email"
                 />
                 <button
-                  className="xs:flex-shrink-0 group relative flex xs:inline-flex w-full xs:w-auto items-center justify-center px-5 h-12 font-bold text-gray-900 bg-yellowGreen-600 rounded-lg transition-all duration-300 focus:outline-none"
+                  className="xs:flex-shrink-0 group relative flex xs:inline-flex lg:w-[200px] w-50 xs:w-auto items-center justify-center px-5 h-12 font-bold text-gray-900 bg-[#a3e33a] rounded-lg transition-all duration-300 focus:outline-none"
                   type="submit"
                 >
-                  <div className="absolute top-0 left-0 w-full h-full rounded-lg ring ring-yellowGreen-900 animate-pulse group-hover:ring-0 transition duration-300" />
+                  <div className="absolute top-0 left-0 w-full h-full rounded-lg ring-2 ring-[#44660e] animate-pulse group-hover:ring-0 transition duration-300" />
+                  <div className="absolute inset-0 w-full h-full rounded-lg border-2 border-black pointer-events-none" />
                   <span>Get Started</span>
                 </button>
               </div>
-              <div className="flex flex-col xs:flex-row items-center justify-center">
+              <div className="flex lg:flex-row items-center justify-center xs:flex-row w-[350px] mx-auto">
                 <span className="block text-sm text-gray-400 opacity-50">
                   7-day money-back guarantee
                 </span>
-                <span className="inline-block my-4 xs:my-0 mx-auto xs:mx-4">
+                <span className="inline-block my-4 xs:my-0 mx-auto xs:mx-">
                   <svg
                     width={12}
                     height={12}
@@ -177,7 +255,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="py-12 md:pb-24 bg-gray-900">
+      {/* hero cont */}
+      <section className="py-12 md:pb-24">
         <div className="container max-w-sm md:max-w-7xl px-4 mx-auto">
           <div className="text-center mb-10">
             <h5 className="text-gray-400 text-lg">
@@ -189,7 +268,7 @@ export default function Home() {
               <span>for our dedication to quality</span>
             </h5>
           </div>
-          <div className="flex flex-wrap items-center">
+          <div className="flex flex-wrap items-center lg:px-13">
             <div className="w-1/2 md:w-1/3 lg:w-1/5 px-4 mb-10">
               <img
                 className="block mx-auto"
@@ -228,33 +307,32 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="pb-16 bg-gray-900" id="how-it-works">
+      {/* How it works */}
+      <section className="pb-16" id="how-it-works">
         <div className="container px-4 mx-auto">
           <div className="max-w-2xl mx-auto text-center mb-24">
             <span className="inline-flex items-center h-6 mb-4 px-2 text-xs uppercase font-medium text-white bg-gray-800 rounded-full">
               HOW IT WORKS
             </span>
-            <h1 className=" tracking-tight text-4xl sm:text-5xl font-bold text-white">
+            <h1 className=" tracking-tight leading-[60px] text-4xl sm:text-5xl font-bold text-white">
               Replace expensive in-house teams &amp; unreliable freelancers with
               a flat monthly fee
             </h1>
           </div>
-          <div className="max-w-lg lg:max-w-5xl xl:max-w-7xl mx-auto">
+          <div className="max-w-lg lg:max-w-4xl xl:max-w-6xl mx-auto">
             <div className="px-2 py-10 rounded-xl border border-gray-800">
               <div className="flex flex-wrap items-center">
                 <div className="w-full lg:w-1/2 lg mb-12 lg:mb-0">
                   <div className="max-w-lg mx-auto">
-                    <button className="group flex items-center text-left py-6 rounded-xl hover:bg-gray-800 px-4 border border-transparent w-full hover:border-gray-700 focus:outline-none transition duration-100">
-                      <div className="relative flex-shrink-0 inline-flex w-12 h-12 mr-4 items-center justify-center font-bold text-white bg-gray-800 border border-gray-700 rounded-full transition duration-200">
-                        <span className="relative z-10 text-white">1</span>
-                        <img
-                          className="hidden group-hover:block absolute top-0 left-0 w-full h-full"
-                          src="aurora-assets/how-it-works/bg-gradient-circle.svg"
-                          alt={``}
-                        />
+                    <button className="group flex items-center gap-5 text-left py-6 rounded-xl hover:bg-[#19251d] px-4 border border-transparent w-full hover:border-gray-700 focus:outline-none transition duration-100">
+                      <div className="flex items-center justify-center">
+                        <div className="w-12 h-12 flex items-center justify-center text-white text-md font-bold rounded-full bg-[#19251d] group-hover:bg-gradient-to-t from-teal-500 to-green-500 shadow-lg transition duration-200">
+                          1
+                        </div>
                       </div>
+
                       <div className="block">
-                        <p className="text-white font-bold text-md">
+                        <p className="text-white font-bold leading-6 text-md w-80">
                           No more hiring, managing, or dealing with writers
                         </p>
                         <p className="text-gray-400 text-sm mt-2">
@@ -263,33 +341,27 @@ export default function Home() {
                         </p>
                       </div>
                     </button>
-                    <button className="group flex items-center text-left py-6 rounded-xl hover:bg-gray-800 px-4 border border-transparent w-full hover:border-gray-700 focus:outline-none transition duration-100">
-                      <div className="relative flex-shrink-0 inline-flex w-12 h-12 mr-4 items-center justify-center font-bold text-white bg-gray-800 border border-gray-700 rounded-full transition duration-200">
-                        <span className="relative z-10 text-white">2</span>
-                        <img
-                          className="hidden group-hover:block absolute top-0 left-0 w-full h-full"
-                          src="aurora-assets/how-it-works/bg-gradient-circle.svg"
-                          alt={``}
-                        />
+                    <button className="group flex items-center gap-5 text-left py-6 rounded-xl hover:bg-[#19251d] px-4 border border-transparent w-full hover:border-gray-700 focus:outline-none transition duration-100">
+                      <div className="flex items-center justify-center">
+                        <div className="w-12 h-12 flex items-center justify-center text-white text-md font-bold rounded-full bg-[#19251d] group-hover:bg-gradient-to-t from-teal-500 to-green-500 shadow-lg transition duration-200">
+                          2
+                        </div>
                       </div>
                       <div className="block">
                         <p className="text-white font-bold text-md">
                           Extraordinarily simple to use
                         </p>
-                        <p className="text-gray-400 text-sm mt-2">
+                        <p className="text-gray-400 text-sm mt-2 w-84">
                           Add your style guide and keyword(s) &amp; we'll take
                           care of the rest.
                         </p>
                       </div>
                     </button>
-                    <button className="group flex items-center text-left py-6 rounded-xl hover:bg-gray-800 px-4 border border-transparent w-full hover:border-gray-700 focus:outline-none transition duration-100">
-                      <div className="relative flex-shrink-0 inline-flex w-12 h-12 mr-4 items-center justify-center font-bold text-white bg-gray-800 border border-gray-700 rounded-full transition duration-200">
-                        <span className="relative z-10 text-white">3</span>
-                        <img
-                          className="hidden group-hover:block absolute top-0 left-0 w-full h-full"
-                          src="aurora-assets/how-it-works/bg-gradient-circle.svg"
-                          alt={``}
-                        />
+                    <button className="group flex items-center gap-5 text-left py-6 rounded-xl hover:bg-[#19251d] px-4 border border-transparent w-full hover:border-gray-700 focus:outline-none transition duration-100">
+                      <div className="flex items-center justify-center">
+                        <div className="w-12 h-12 flex items-center justify-center text-white text-md font-bold rounded-full bg-[#19251d] group-hover:bg-gradient-to-t from-teal-500 to-green-500 shadow-lg transition duration-200">
+                          3
+                        </div>
                       </div>
                       <div className="block">
                         <p className="text-white font-bold text-md">
@@ -315,19 +387,24 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="relative py-12 md:py-24 bg-gray-900">
+      {/* growth */}
+      <section className="relative py-12 md:py-24">
         <div className="relative z-10 container px-4 mx-auto">
           <div className="flex flex-wrap">
             <div className="w-full md:w-1/2 lg:w-7/12 px-4 order-last md:order-first">
               <div>
-                <img className="block" src="/dark-image-left.png" alt={``} />
+                <img
+                  className="block relative z-10"
+                  src="/dark-image-left.png"
+                  alt={``}
+                />
               </div>
             </div>
             <div className="w-full md:w-1/2 lg:w-5/12 mb-16 md:mb-0">
               <div className="md:max-w-lg">
-                <div className="pb-10 mb-10 border-b border-teal-800">
+                <div className="pb-10 mb-10 border-b border-[#24432d]">
                   <div className="max-w-md mb-10">
-                    <h1 className=" tracking-tight text-4xl sm:text-5xl font-bold text-white mb-4">
+                    <h1 className=" tracking-tight text-4xl leading-15 sm:text-5xl font-bold text-white mb-5">
                       Quit the busywork &amp; get back to growth
                     </h1>
                     <p className="text-gray-400">
@@ -341,7 +418,7 @@ export default function Home() {
                     href="/about"
                   >
                     <div className="inline-flex items-stretch h-12 p-0.5 rounded-lg bg-gradient-to-b from-gray-500 via-gray-700 to-gray-700 hover:to-gray-800">
-                      <div className="flex items-center px-4 bg-gray-700 group-hover:bg-opacity-40 rounded-md transition duration-300">
+                      <div className="flex items-center px-4 bg-[#3b5444] group-hover:bg-opacity-40 rounded-md transition duration-300">
                         <span className="mr-2">Learn more</span>
                         <span className="transform group-hover:translate-x-1 transition duration-300">
                           <svg
@@ -364,6 +441,7 @@ export default function Home() {
                     </div>
                   </a>
                 </div>
+
                 <div className="max-w-md mb-10">
                   <span className="block mb-5">
                     <svg
@@ -407,11 +485,12 @@ export default function Home() {
         </div>
         <img
           className="absolute bottom-0 right-0 opacity-80"
-          src="aurora-assets/features/shadow-blur-right.png"
+          src="/shadow-blur.png"
           alt={``}
         />
       </section>
-      <section className="py-12 md:py-24 bg-gray-900" id="pricing">
+      {/* pricing */}
+      <section className="py-12 md:py-24" id="pricing">
         <div className="container px-4 mx-auto">
           <div className="max-w-sm md:max-w-md lg:max-w-7xl mx-auto">
             <div className="text-center mb-16">
@@ -424,7 +503,7 @@ export default function Home() {
             </div>
             <div className="flex flex-wrap">
               <div className="w-full lg:w-1/3 mb-12 lg:mb-0 md:px-4">
-                <div className="p-8 mb-10 bg-gray-900 border border-gray-700 rounded-xl shadow-sm">
+                <div className="p-8 mb-10 bg-transparent border border-gray-700 rounded-xl shadow-sm">
                   <div className="flex mb-8 items-center">
                     <span className="mr-3">
                       <svg
@@ -521,7 +600,7 @@ export default function Home() {
                     href="https://app.1secondcopy.com"
                   >
                     <div className="inline-flex items-stretch w-full h-12 p-0.5 rounded-lg bg-gradient-to-b from-gray-500 via-gray-700 to-gray-700 hover:to-gray-800">
-                      <div className="flex w-full items-center justify-center px-4 bg-gray-700 group-hover:bg-opacity-40 rounded-md transition duration-300">
+                      <div className="flex w-full items-center justify-center px-4 bg-[#3b5444] group-hover:bg-opacity-40 rounded-md transition duration-300">
                         <span>Get Started</span>
                       </div>
                     </div>
@@ -529,7 +608,7 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="flex mb-10 items-start">
-                    <span className="flex-shrink-0 inline-flex w-5 h-5 items-center justify-center bg-gray-800 rounded-full">
+                    <span className="flex-shrink-0 inline-flex w-5 h-5 items-center justify-center bg-[#19251d] rounded-full">
                       <svg
                         width={14}
                         height={14}
@@ -632,7 +711,7 @@ export default function Home() {
                     </div>
                   </div>
                   <a
-                    className="group relative flex items-center justify-center px-5 h-12 font-bold text-white bg-gradient-to-br from-cyanGreen-800 to-cyan-800 rounded-lg transition-all duration-300"
+                    className="group relative flex items-center justify-center px-5 h-12 font-bold text-white bg-gradient-to-br from-lime-500 via-grean-200 to-teal-600 rounded-lg transition-all duration-300"
                     href="https://app.1secondcopy.com"
                   >
                     <div className="absolute top-0 left-0 w-full h-full rounded-lg ring ring-green-300 animate-pulse group-hover:ring-0 transition duration-300" />
@@ -640,7 +719,7 @@ export default function Home() {
                   </a>
                 </div>
                 <div className="flex mb-10 items-start">
-                  <span className="flex-shrink-0 inline-flex w-5 h-5 items-center justify-center bg-gray-800 rounded-full">
+                  <span className="flex-shrink-0 inline-flex w-5 h-5 items-center justify-center bg-[#19251d] rounded-full">
                     <svg
                       width={14}
                       height={14}
@@ -667,7 +746,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full lg:w-1/3 md:px-4">
-                <div className="p-8 mb-10 bg-gray-800 border border-gray-700 rounded-xl">
+                <div className="p-8 mb-10 bg-[#19251d] border border-gray-700 rounded-xl">
                   <div className="flex mb-8 items-center">
                     <span className="mr-3">
                       <svg
@@ -734,7 +813,7 @@ export default function Home() {
                   </a>
                 </div>
                 <div className="flex mb-10 items-start">
-                  <span className="flex-shrink-0 inline-flex w-5 h-5 items-center justify-center bg-gray-800 rounded-full">
+                  <span className="flex-shrink-0 inline-flex w-5 h-5 items-center justify-center bg-[#19251d] rounded-full">
                     <svg
                       width={14}
                       height={14}
@@ -764,7 +843,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="py-12 md:py-24 bg-gray-900">
+      {/* testimonial */}
+      <section className="py-12 md:py-24">
         <div className="container px-4 mx-auto">
           <div className="max-w-sm md:max-w-7xl mx-auto">
             <div className="max-w-2xl mx-auto mb-20 text-center">
@@ -775,9 +855,9 @@ export default function Home() {
                 Companies really love us
               </h1>
             </div>
-            <div className="flex flex-wrap">
+            <div className="flex flex-wrap lg:px-10">
               <div className="w-full md:w-1/2 lg:w-1/3">
-                <div className="pt-10 px-6 xs:px-10 pb-14 bg-gray-800 rounded-t-xl md:rounded-none md:rounded-tl-xl">
+                <div className="pt-10 px-6 xs:px-10 pb-14 bg-[#19251d] rounded-t-xl md:rounded-none md:rounded-tl-xl">
                   <div className="flex items-center justify-between mb-8 pb-8 border-b border-gray-700">
                     <div>
                       <span className="block text-base font-semibold text-white">
@@ -789,7 +869,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div>
-                    <p className="text-2xl font-semibold text-white">
+                    <p className="text-2xl font-semibold text-white w-xs">
                       "Clean, simple, and easy to use. I love it! Tripling our
                       content volume was a breeze."
                     </p>
@@ -817,7 +897,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full md:w-1/2 lg:w-1/3">
-                <div className="pt-10 px-6 xs:px-10 pb-14 bg-gray-800 md:bg-transparent lg:bg-gray-800 rounded-xl md:rounded-none lg:rounded-tr-xl">
+                <div className="pt-10 px-6 xs:px-10 pb-14 bg-[#19251d] md:bg-transparent lg:bg-[#19251d] rounded-xl md:rounded-none lg:rounded-tr-xl">
                   <div className="flex items-center justify-between mb-8 pb-8 border-b border-gray-700">
                     <div>
                       <span className="block text-base font-semibold text-white">
@@ -837,7 +917,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full md:w-1/2 lg:w-1/3">
-                <div className="pt-10 px-6 xs:px-10 pb-14 md:bg-gray-800 lg:bg-transparent rounded-r-xl lg:rounded-none">
+                <div className="pt-10 px-6 xs:px-10 pb-14 lg:bg-transparent md:bg-[#19251d] bg-transparent rounded-r-xl lg:rounded-none">
                   <div className="flex items-center justify-between mb-8 pb-8 border-b border-gray-700">
                     <div>
                       <span className="block text-base font-semibold text-white">
@@ -858,7 +938,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full md:w-1/2 lg:w-1/3">
-                <div className="pt-10 px-6 xs:px-10 pb-14 bg-gray-800 rounded-b-xl md:rounded-r-none md:rounded-bl-xl lg:rounded-b-xl">
+                <div className="pt-10 px-6 xs:px-10 pb-14 bg-[#19251d] rounded-b-xl md:rounded-r-none md:rounded-bl-xl lg:rounded-b-xl">
                   <div className="flex items-center justify-between mb-8 pb-8 border-b border-gray-700">
                     <div>
                       <span className="block text-base font-semibold text-white">
@@ -901,22 +981,24 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="relative pt-12 pb-12 lg:pb-0 md:pt-24 bg-gray-900">
+      {/* faq */}
+      <section className="relative pt-12 pb-12 lg:pb-0 md:pt-24 lg:px-14">
         <div className="max-w-sm md:max-w-7xl px-4 mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="w-full mb-20 lg:mb-0 lg:pb-64">
               <div>
-                <span className="inline-flex items-center h-6 mb-6 px-2 text-sm font-medium text-white bg-gray-800 rounded-full">
+                <span className="inline-flex items-center h-6 mb-6 px-2 text-sm font-medium text-white bg-[#19251d] rounded-full">
                   FAQ
                 </span>
-                <h1 className=" tracking-tight text-4xl sm:text-5xl font-semibold text-white mb-10">
+                <h1 className="tracking-tight lg:text-[48px] lg:leading-15 sm:font-semibold sm:leading-12 text-[36px] font-semibold text-white mb-10 lg:w-lg md:w-xl w-sm">
                   Frequently asked questions
                 </h1>
                 <a
-                  className="xs:flex-shrink-0 group relative w-full xs:w-auto flex xs:inline-flex items-center justify-center h-10 px-4 py-px font-bold text-gray-900 bg-yellowGreen-600 rounded-lg transition-all duration-300 focus:outline-none"
+                  className="xs:flex-shrink-0 group relative w-36 xs:w-auto flex xs:inline-flex items-center justify-center h-10 px-2 py-px font-bold text-gray-900 bg-[#a3e33a] rounded-lg transition-all duration-300 focus:outline-none"
                   href="/contact"
                 >
-                  <div className="absolute top-0 left-0 w-full h-full rounded-lg ring ring-yellowGreen-900 animate-pulse group-hover:ring-0 transition duration-300" />
+                  <div className="absolute top-0 left-0 w-full h-full rounded-lg ring ring-[#44660e] animate-pulse group-hover:ring-0 transition duration-300" />
+                  <div className="absolute inset-0 w-full h-full rounded-lg border-2 border-black pointer-events-none" />
                   <svg
                     width={16}
                     height={16}
@@ -958,7 +1040,7 @@ export default function Home() {
             </div>
             <div className="w-full">
               <div>
-                <button className="group flex mb-3 items-center justify-between text-left w-full px-6 py-5 bg-gray-800 rounded-xl border border-transparent hover:border-yellowGreen-800 ring ring-transparent hover:ring-yellowGreen-800 focus:outline-none">
+                <button className="group flex mb-3 items-center justify-between text-left w-full px-6 py-5 bg-[#19251d] rounded-xl border-3 border-transparent hover:border-[#a3e33a] ring ring-transparent hover:ring-[#a3e33a] focus:outline-none">
                   <div className="pr-4">
                     <h6 className="font-semibold text-white">
                       What is 1SecondCopy?
@@ -968,7 +1050,7 @@ export default function Home() {
                       editors that work on-demand for your convenience.
                     </p>
                   </div>
-                  <div className="flex-shrink-0 flex w-7 h-7 items-center justify-center bg-gray-700 rounded-full">
+                  <div className="flex-shrink-0 flex w-7 h-7 items-center justify-center bg-[#3b5444] rounded-full">
                     <svg
                       className="group-hover:hidden"
                       width={16}
@@ -1003,7 +1085,7 @@ export default function Home() {
                     </svg>
                   </div>
                 </button>
-                <button className="group flex mb-3 items-center justify-between text-left w-full px-6 py-5 bg-gray-800 rounded-xl border border-transparent hover:border-yellowGreen-800 ring ring-transparent hover:ring-yellowGreen-800 focus:outline-none">
+                <button className="group flex mb-3 items-center justify-between text-left w-full px-6 py-5 bg-[#19251d] rounded-xl border-3 border-transparent hover:border-[#a3e33a] ring ring-transparent hover:ring-yellowGreen-800 focus:outline-none">
                   <div className="pr-4">
                     <h6 className="font-semibold text-white">
                       How does it work?
@@ -1015,7 +1097,7 @@ export default function Home() {
                       under three business days.
                     </p>
                   </div>
-                  <div className="flex-shrink-0 flex w-7 h-7 items-center justify-center bg-gray-700 rounded-full">
+                  <div className="flex-shrink-0 flex w-7 h-7 items-center justify-center bg-[#3b5444] rounded-full">
                     <svg
                       className="group-hover:hidden"
                       width={16}
@@ -1050,7 +1132,7 @@ export default function Home() {
                     </svg>
                   </div>
                 </button>
-                <button className="group flex mb-3 items-center justify-between text-left w-full px-6 py-5 bg-gray-800 rounded-xl border border-transparent hover:border-yellowGreen-800 ring ring-transparent hover:ring-yellowGreen-800 focus:outline-none">
+                <button className="group flex mb-3 items-center justify-between text-left w-full px-6 py-5 bg-[#19251d] rounded-xl border-3 border-transparent hover:border-[#a3e33a] ring ring-transparent hover:ring-[#a3e33a] focus:outline-none">
                   <div className="pr-4">
                     <h6 className="font-semibold text-white">
                       How much does it cost?
@@ -1060,7 +1142,7 @@ export default function Home() {
                       additional words in the app as needed.
                     </p>
                   </div>
-                  <div className="flex-shrink-0 flex w-7 h-7 items-center justify-center bg-gray-700 rounded-full">
+                  <div className="flex-shrink-0 flex w-7 h-7 items-center justify-center bg-[#3b5444] rounded-full">
                     <svg
                       className="group-hover:hidden"
                       width={16}
@@ -1095,7 +1177,7 @@ export default function Home() {
                     </svg>
                   </div>
                 </button>
-                <button className="group flex mb-3 items-center justify-between text-left w-full px-6 py-5 bg-gray-800 rounded-xl border border-transparent hover:border-yellowGreen-800 ring ring-transparent hover:ring-yellowGreen-800 focus:outline-none">
+                <button className="group flex mb-3 items-center justify-between text-left w-full px-6 py-5 bg-[#19251d] rounded-xl border-3 border-transparent hover:border-[#a3e33a] ring ring-transparent hover:ring-[#a3e33a] focus:outline-none">
                   <div className="pr-4">
                     <h6 className="font-semibold text-white">
                       Is there any risk?
@@ -1105,7 +1187,7 @@ export default function Home() {
                       first week, let us know and we'll give you a 100% refund.
                     </p>
                   </div>
-                  <div className="flex-shrink-0 flex w-7 h-7 items-center justify-center bg-gray-700 rounded-full">
+                  <div className="flex-shrink-0 flex w-7 h-7 items-center justify-center bg-[#3b5444] rounded-full">
                     <svg
                       className="group-hover:hidden"
                       width={16}
@@ -1140,7 +1222,7 @@ export default function Home() {
                     </svg>
                   </div>
                 </button>
-                <button className="group flex items-center justify-between text-left w-full px-6 py-5 bg-gray-800 rounded-xl border border-transparent hover:border-yellowGreen-800 ring ring-transparent hover:ring-yellowGreen-800 focus:outline-none">
+                <button className="group flex items-center justify-between text-left w-full px-6 py-5 bg-[#19251d] rounded-xl border-3 border-transparent hover:border-[#a3e33a] ring ring-transparent hover:ring-[#a3e33a] focus:outline-none">
                   <div className="pr-4">
                     <h6 className="font-semibold text-white">
                       How is the content delivered?
@@ -1150,7 +1232,7 @@ export default function Home() {
                       sharing access.
                     </p>
                   </div>
-                  <div className="flex-shrink-0 flex w-7 h-7 items-center justify-center bg-gray-700 rounded-full">
+                  <div className="flex-shrink-0 flex w-7 h-7 items-center justify-center bg-[#3b5444] rounded-full">
                     <svg
                       className="group-hover:hidden"
                       width={16}
@@ -1190,9 +1272,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="py-12 md:py-24 bg-gray-900">
+      {/* get started */}
+      <section className="py-12 md:py-24">
         <div className="container px-4 mx-auto">
-          <div className="relative pb-16 border-b border-yellowGreen-900 border-opacity-50 overflow-hidden">
+          <div className="relative pb-16 border-b border-[#2e490d] border-opacity-50 overflow-hidden">
             <img
               className="absolute bottom-0 left-1/2 md:-mb-2 lg:-mb-20 transform -translate-x-1/2 opacity-20"
               src="aurora-assets/cta/line-green-bottom.png"
@@ -1200,7 +1283,7 @@ export default function Home() {
             />
             <img
               className="absolute bottom-0 left-1/2 -mb-5 sm:-mb-10 md:-mb-16 lg:-mb-28 transform -translate-x-1/2 opacity-20"
-              src="aurora-assets/cta/light-green-bottom.png"
+              src="/light-green-bottom.png"
               alt={``}
             />
             <div className="relative max-w-sm md:max-w-xl mx-auto text-center">
@@ -1211,10 +1294,11 @@ export default function Home() {
                 Outsource your writing and build a reliable content machine.
               </h1>
               <a
-                className="group relative flex xs:inline-flex items-center justify-center px-5 h-12 font-bold text-sm text-gray-900 bg-yellowGreen-600 rounded-lg transition-all duration-300"
+                className="group relative flex xs:inline-flex items-center justify-center px-5 h-12 font-bold text-sm text-gray-900 bg-[#a3e33a] rounded-lg transition-all duration-300 w-54 mx-auto"
                 href="https://app.1secondcopy.com"
               >
-                <div className="absolute top-0 left-0 w-full h-full rounded-lg ring ring-yellowGreen-900 animate-pulse group-hover:ring-0 transition duration-300" />
+                <div className="absolute top-0 left-0 w-full h-full rounded-lg ring ring-[#44660e] animate-pulse group-hover:ring-0 transition duration-300" />
+                <div className="absolute inset-0 w-full h-full rounded-lg border-2 border-black pointer-events-none" />
                 <span className="mr-2">Start your no-risk trial</span>
                 <span className="transform group-hover:translate-x-1 transition duration-200">
                   <svg
@@ -1238,14 +1322,15 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="py-12 md:pt-24 bg-gray-900">
+      {/* Footer */}
+      <section className="py-12 md:pt-24">
         <div className="mb-12 pb-24 border-b border-gray-800">
           <div className="container px-4 mx-auto">
             <div className="flex flex-wrap -mx-4">
               <div className="w-full lg:w-1/2 px-4 mb-16">
                 <div>
                   <a
-                    className="flex space-x-2 items-center text-white text-xl font-bold"
+                    className="flex gap-2 items-center text-white text-xl font-bold"
                     href="/"
                   >
                     <img
@@ -1262,8 +1347,8 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full lg:w-1/2 ml-auto px-4">
-                <div className="flex flex-wrap -mx-4 -mb-8">
-                  <div className="w-1/2 xs:w-1/3 px-4 mb-8">
+                <div className="flex justify-between -mx-4 -mb-8">
+                  <div className="w-full sm:w-1/2 lg:w-1/3 px-4 mb-8">
                     <h5 className="text-xl font-semibold text-white mb-6">
                       Product
                     </h5>
@@ -1294,7 +1379,7 @@ export default function Home() {
                       </li>
                     </ul>
                   </div>
-                  <div className="w-1/2 xs:w-1/3 px-4 mb-8">
+                  <div className="w-full sm:w-1/2 lg:w-1/3 px-4 mb-8">
                     <h5 className="text-xl font-semibold text-white mb-6">
                       Company
                     </h5>
@@ -1307,7 +1392,6 @@ export default function Home() {
                           About
                         </a>
                       </li>
-                      <li className="mb-6" />
                       <li className="flex items-center mb-6">
                         <a
                           className="inline-block mr-2 text-lg text-gray-400 hover:text-white"
@@ -1315,7 +1399,7 @@ export default function Home() {
                         >
                           <span>Careers</span>
                         </a>
-                        <span className="inline-flex h-6 px-2 items-center text-white bg-teal-600 rounded-full">
+                        <span className="inline-flex h-6 px-2 items-center text-white bg-[#579e6c] rounded-full">
                           <svg
                             width={8}
                             height={8}
@@ -1340,7 +1424,7 @@ export default function Home() {
                       </li>
                     </ul>
                   </div>
-                  <div className="w-full xs:w-1/3 px-4 mb-8">
+                  <div className="w-full sm:w-1/2 lg:w-1/3 px-4 mb-8">
                     <h5 className="text-xl font-semibold text-white mb-6">
                       Resources
                     </h5>
@@ -1369,7 +1453,6 @@ export default function Home() {
                           Privacy
                         </a>
                       </li>
-                      <li />
                     </ul>
                   </div>
                 </div>
