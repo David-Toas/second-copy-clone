@@ -1,4 +1,6 @@
-import { useState } from "react";
+"use client"
+
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
 interface ModalFormProps {
@@ -7,6 +9,13 @@ interface ModalFormProps {
 
 const ModalForm: React.FC<ModalFormProps> = ({ formUrl }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const iframeRef = useRef<HTMLIFrameElement | null>(null);
+
+  useEffect(() => {
+    // Preload the iframe when the component mounts
+    setIsLoaded(true);
+  }, []);
 
   return (
     <>
@@ -17,6 +26,15 @@ const ModalForm: React.FC<ModalFormProps> = ({ formUrl }) => {
           Get Started
         </div>
       </button>
+
+      {isLoaded && (
+        <iframe
+          ref={iframeRef}
+          src={formUrl}
+          className="hidden"
+          title="Preloaded Form"
+        />
+      )}
 
       {isOpen &&
         createPortal(
