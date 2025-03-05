@@ -3,6 +3,7 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 "use client";
 
+import ModalForm from "@/components/ModalForm";
 import { useState } from "react";
 
 // export default function Navbar() {
@@ -11,9 +12,9 @@ export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="__className_f70e54 scroll-smooth bg-[#041109]">
+    <div className="__className_f70e54 scroll-smooth bg-[#111827]">
       {/* header and hero  */}
-      <section className=" pb-24 lg:mx-26">
+      <section className=" pb-24 lg:mx-8">
         {/* header */}
         <section>
           <nav className="relative">
@@ -24,7 +25,7 @@ export default function Home() {
                   href="/"
                 >
                   <img
-                    className="h-9 rounded-lg ring-2 ring-white mr-2"
+                    className="h-9 rounded-lg ring-3 ring-white mr-2"
                     src="/1secondcopy_icon.png"
                     alt=""
                   />
@@ -34,7 +35,7 @@ export default function Home() {
                 </a>
                 <button
                   onClick={() => setIsOpen(true)}
-                  className="lg:hidden navbar-burger flex items-center justify-center h-10 w-10 ml-auto border border-[#19251d] bg-[#19251d] bg-opacity-30 hover:bg-[#19251d] rounded-lg"
+                  className="lg:hidden navbar-burger flex items-center justify-center h-10 w-10 ml-auto border border-[#1F2937] bg-[#1F2937] bg-opacity-30 hover:bg-[#1F2937] rounded-lg"
                 >
                   <svg
                     width={24}
@@ -101,16 +102,13 @@ export default function Home() {
                   >
                     Login
                   </a>
-                  <a
-                    className="group inline-block justify-center p-1 text-center text-sm text-white font-semibold rounded-lg"
-                    href="https://app.1secondcopy.com/"
-                  >
+                  <div className="group inline-block justify-center p-1 text-center text-sm text-white font-semibold rounded-lg">
                     <div className="inline-flex items-stretch h-10 p-0.5 rounded-lg bg-gradient-to-b from-gray-500 via-gray-700 to-gray-700 hover:to-gray-800">
-                      <div className="flex items-center px-4 bg-[#3b5444] group-hover:bg-opacity-40 rounded-md transition duration-300">
-                        <span>Get Started</span>
+                      <div className="bg-[#D95D39] flex items-center justify-center rounded-lg">
+                        <ModalForm formUrl="https://tally.so/r/mRkxMp" />
                       </div>
                     </div>
-                  </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -123,10 +121,11 @@ export default function Home() {
               ></div>
             )}
             <div
-              className={`fixed top-0 right-0 h-full w-3/4 md:w-1/2 bg-[#041109] text-white z-50 p-6 transform transition-transform duration-300 ease-in-out ${
+              className={`fixed top-0 right-0 h-full w-2/4 md:w-1/3 bg-[#111827] text-white z-50 p-6 transform transition-transform duration-300 ease-in-out ${
                 isOpen ? "translate-x-0" : "translate-x-full"
               }`}
             >
+              
               <button
                 onClick={() => setIsOpen(false)}
                 className="absolute top-4 right-4 text-white hover:text-gray-300 mt-5 mr-4"
@@ -164,14 +163,12 @@ export default function Home() {
                 >
                   Login
                 </a>
-                <button
-                  className="xs:flex-shrink-0 group relative flex xs:inline-flex w-34 xs:w-auto items-center justify-center px-5 h-12 font-bold text-gray-900 bg-[#a3e33a] rounded-lg transition-all duration-300 focus:outline-none mt-16"
-                  type="submit"
-                >
-                  <div className="absolute top-0 left-0 w-full h-full rounded-lg ring ring-[#44660e] animate-pulse group-hover:ring-0 transition duration-300" />
-                  <div className="absolute inset-0 w-full h-full rounded-lg border-2 border-black pointer-events-none" />
-                  <span>Get Started</span>
-                </button>
+
+                <div className="mt-16 xs:flex-shrink-0 group relative flex xs:inline-flex w-34 xs:w-auto items-center justify-center px-5 h-12 font-bold text-gray-300 bg-[#D95D39] rounded-lg transition-all duration-300 focus:outline-none">
+                  <div className="absolute top-0 left-0 w-full h-full rounded-lg ring-3 ring-[#ee7220] animate-pulse group-hover:ring-0 transition duration-300" />
+                  <div className="absolute inset-0 w-full h-full rounded-lg border border-black pointer-events-none" />
+                  <ModalForm formUrl="https://tally.so/r/mRkxMp" />
+                </div>
               </nav>
             </div>
           </nav>
@@ -180,35 +177,33 @@ export default function Home() {
         <div className="relative pt-12 md:pt-24 mt-2">
           <div className="container px-4 mx-auto">
             <div className="relative max-w-lg md:max-w-3xl mx-auto text-center">
-              <h1 className="tracking-tight text-4xl xs:text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6">
-                <span className="leading-none">Content writing,</span>
-                <span className="text-gray-400">
+              <h1 className="tracking-tight text-4xl xs:text-4xl md:text-5xl lg:text-7xl lg:leading-21 font-bold text-white mb-6">
+                <span className="leading-none">Precision Media Buying:</span>
+                <span className="text-[#9CA3AF]">
                   <br />
-                  with a <span className="underline">twist</span>.
+                  Broader Reach,{" "}
+                  <span className="underline">Better Results</span>.
                 </span>
               </h1>
-              <p className="md:max-w-md lg:max-w-lg mx-auto text-lg text-gray-400 mb-8">
-                We hired the top 1% of writers so you don't have to. Get high
-                quality articles &amp; posts in just 3 days.
+              <p className="md:max-w-md lg:max-w-lg mx-auto text-lg text-[#9CA3AF] mb-8">
+                We hired the top 1% of Media buyers so you dont have to. Get
+                high quality media strategies and plans in just 3 days
               </p>
               <div className="xs:flex lg:flex flex justify-center gap-3 max-w-md mx-auto mb-2">
                 <input
-                  className="w-full h-12 mb-3 xs:mb-0 xs:mr-3 p-3 text-gray-400 placeholder-gray-500 bg-[#19251d] outline-none ring ring-transparent focus:ring-[#a3e33a] focus:ring-3 rounded-lg"
+                  className="w-full h-12 mb-3 xs:mb-0 xs:mr-3 p-3 text-[#9CA3AF] placeholder-gray-500 bg-[#1F2937] outline-none ring ring-transparent focus:ring-[#FF6D00] focus:ring-3 rounded-lg"
                   type="email"
                   placeholder="Your email"
                   id="email"
                 />
-                <button
-                  className="xs:flex-shrink-0 group relative flex xs:inline-flex lg:w-[200px] w-50 xs:w-auto items-center justify-center px-5 h-12 font-bold text-gray-900 bg-[#a3e33a] rounded-lg transition-all duration-300 focus:outline-none"
-                  type="submit"
-                >
-                  <div className="absolute top-0 left-0 w-full h-full rounded-lg ring-2 ring-[#44660e] animate-pulse group-hover:ring-0 transition duration-300" />
-                  <div className="absolute inset-0 w-full h-full rounded-lg border-2 border-black pointer-events-none" />
-                  <span>Get Started</span>
-                </button>
+                <div className="xs:flex-shrink-0 group relative flex xs:inline-flex w-34 xs:w-auto items-center justify-center px-5 h-12 font-bold text-gray-300 rounded-lg transition-all duration-300 focus:outline-none">
+                  <div className="absolute top-0 left-0 w-full h-full rounded-lg ring-3 ring-[#ee7220] animate-pulse group-hover:ring-0 transition duration-300" />
+                  <div className="absolute inset-0 w-full h-full rounded-lg border bg-[#D95D39] border-black pointer-events-none" />
+                  <ModalForm formUrl="https://tally.so/r/mRkxMp" />
+                </div>
               </div>
               <div className="flex lg:flex-row items-center justify-center xs:flex-row w-[350px] mx-auto">
-                <span className="block text-sm text-gray-400 opacity-50">
+                <span className="block text-sm text-[#9CA3AF] opacity-50">
                   7-day money-back guarantee
                 </span>
                 <span className="inline-block my-4 xs:my-0 mx-auto xs:mx-">
@@ -242,7 +237,7 @@ export default function Home() {
                     </g>
                   </svg>
                 </span>
-                <span className="block text-sm text-gray-400 opacity-50">
+                <span className="block text-sm text-[#9CA3AF] opacity-50">
                   Unlimited revisions
                 </span>
               </div>
@@ -259,13 +254,13 @@ export default function Home() {
       <section className="py-12 md:pb-24">
         <div className="container max-w-sm md:max-w-7xl px-4 mx-auto">
           <div className="text-center mb-10">
-            <h5 className="text-gray-400 text-lg">
-              <span>Featured on some of the</span>
+            <h5 className="text-[#9CA3AF] text-lg">
+              <span>25 years</span>
               <span className="text-white">
                 {" "}
-                {/* */}world's biggest publications{/* */}{" "}
+                {/* */}work experience on some{/* */}{" "}
               </span>
-              <span>for our dedication to quality</span>
+              <span>of the world's biggest brands</span>
             </h5>
           </div>
           <div className="flex flex-wrap items-center lg:px-13">
@@ -315,8 +310,8 @@ export default function Home() {
               HOW IT WORKS
             </span>
             <h1 className=" tracking-tight leading-[60px] text-4xl sm:text-5xl font-bold text-white">
-              Replace expensive in-house teams &amp; unreliable freelancers with
-              a flat monthly fee
+              Replace expensive in-house teams & agencies with a flat monthly
+              fee
             </h1>
           </div>
           <div className="max-w-lg lg:max-w-4xl xl:max-w-6xl mx-auto">
@@ -324,26 +319,26 @@ export default function Home() {
               <div className="flex flex-wrap items-center">
                 <div className="w-full lg:w-1/2 lg mb-12 lg:mb-0">
                   <div className="max-w-lg mx-auto">
-                    <button className="group flex items-center gap-5 text-left py-6 rounded-xl hover:bg-[#19251d] px-4 border border-transparent w-full hover:border-gray-700 focus:outline-none transition duration-100">
+                    <button className="group flex items-center gap-5 text-left py-6 rounded-xl hover:bg-[#1F2937] px-4 border border-transparent w-full hover:border-gray-700 focus:outline-none transition duration-100">
                       <div className="flex items-center justify-center">
-                        <div className="w-12 h-12 flex items-center justify-center text-white text-md font-bold rounded-full bg-[#19251d] group-hover:bg-gradient-to-t from-teal-500 to-green-500 shadow-lg transition duration-200">
+                        <div className="w-12 h-12 flex items-center justify-center text-white text-md font-bold rounded-full bg-[#1F2937] group-hover:bg-gradient-to-t from-teal-500 to-green-500 shadow-lg transition duration-200">
                           1
                         </div>
                       </div>
 
                       <div className="block">
                         <p className="text-white font-bold leading-6 text-md w-80">
-                          No more hiring, managing, or dealing with writers
+                          No more hiring, managing, or dealing with media buyers
                         </p>
-                        <p className="text-gray-400 text-sm mt-2">
+                        <p className="text-[#9CA3AF] text-sm mt-2">
                           We take care of all of the comms &amp; busywork for
                           you.
                         </p>
                       </div>
                     </button>
-                    <button className="group flex items-center gap-5 text-left py-6 rounded-xl hover:bg-[#19251d] px-4 border border-transparent w-full hover:border-gray-700 focus:outline-none transition duration-100">
+                    <button className="group flex items-center gap-5 text-left py-6 rounded-xl hover:bg-[#1F2937] px-4 border border-transparent w-full hover:border-gray-700 focus:outline-none transition duration-100">
                       <div className="flex items-center justify-center">
-                        <div className="w-12 h-12 flex items-center justify-center text-white text-md font-bold rounded-full bg-[#19251d] group-hover:bg-gradient-to-t from-teal-500 to-green-500 shadow-lg transition duration-200">
+                        <div className="w-12 h-12 flex items-center justify-center text-white text-md font-bold rounded-full bg-[#1F2937] group-hover:bg-gradient-to-t from-teal-500 to-green-500 shadow-lg transition duration-200">
                           2
                         </div>
                       </div>
@@ -351,15 +346,15 @@ export default function Home() {
                         <p className="text-white font-bold text-md">
                           Extraordinarily simple to use
                         </p>
-                        <p className="text-gray-400 text-sm mt-2 w-84">
-                          Add your style guide and keyword(s) &amp; we'll take
-                          care of the rest.
+                        <p className="text-[#9CA3AF] text-sm mt-2 w-84">
+                          Complete your media brief and we will take care of the
+                          rest.
                         </p>
                       </div>
                     </button>
-                    <button className="group flex items-center gap-5 text-left py-6 rounded-xl hover:bg-[#19251d] px-4 border border-transparent w-full hover:border-gray-700 focus:outline-none transition duration-100">
+                    <button className="group flex items-center gap-5 text-left py-6 rounded-xl hover:bg-[#1F2937] px-4 border border-transparent w-full hover:border-gray-700 focus:outline-none transition duration-100">
                       <div className="flex items-center justify-center">
-                        <div className="w-12 h-12 flex items-center justify-center text-white text-md font-bold rounded-full bg-[#19251d] group-hover:bg-gradient-to-t from-teal-500 to-green-500 shadow-lg transition duration-200">
+                        <div className="w-12 h-12 flex items-center justify-center text-white text-md font-bold rounded-full bg-[#1F2937] group-hover:bg-gradient-to-t from-teal-500 to-green-500 shadow-lg transition duration-200">
                           3
                         </div>
                       </div>
@@ -367,9 +362,9 @@ export default function Home() {
                         <p className="text-white font-bold text-md">
                           Completely risk free with unlimited revisions
                         </p>
-                        <p className="text-gray-400 text-sm mt-2">
-                          Don't love your content? We'll rewrite it until you
-                          do.
+                        <p className="text-[#9CA3AF] text-sm mt-2">
+                          Don't love your media plan? We will rewrite it until
+                          you do.
                         </p>
                       </div>
                     </button>
@@ -405,12 +400,12 @@ export default function Home() {
                 <div className="pb-10 mb-10 border-b border-[#24432d]">
                   <div className="max-w-md mb-10">
                     <h1 className=" tracking-tight text-4xl leading-15 sm:text-5xl font-bold text-white mb-5">
-                      Quit the busywork &amp; get back to growth
+                      Quit time consuming work &amp; get back to growth
                     </h1>
-                    <p className="text-gray-400">
-                      You're an affiliate site, agency, or SaaS company. Why
+                    <p className="text-[#9CA3AF]">
+                      You are an established company, start up or agency. Why
                       waste your time hiring and managing when you could be
-                      focusing on growth? That's where we come in.
+                      focusing on growth? That is where we come in
                     </p>
                   </div>
                   <a
@@ -418,7 +413,7 @@ export default function Home() {
                     href="/about"
                   >
                     <div className="inline-flex items-stretch h-12 p-0.5 rounded-lg bg-gradient-to-b from-gray-500 via-gray-700 to-gray-700 hover:to-gray-800">
-                      <div className="flex items-center px-4 bg-[#3b5444] group-hover:bg-opacity-40 rounded-md transition duration-300">
+                      <div className="flex items-center px-4 bg-[#D95D39] group-hover:bg-opacity-40 rounded-md transition duration-300">
                         <span className="mr-2">Learn more</span>
                         <span className="transform group-hover:translate-x-1 transition duration-300">
                           <svg
@@ -473,7 +468,7 @@ export default function Home() {
                       <span className="block text-sm font-semibold text-white mb-1">
                         Zak Blake
                       </span>
-                      <span className="block text-xs text-gray-400">
+                      <span className="block text-xs text-[#9CA3AF]">
                         Former CTO, Scaling With Systems
                       </span>
                     </div>
@@ -497,7 +492,7 @@ export default function Home() {
               <h1 className=" tracking-tight text-4xl sm:text-5xl font-bold text-white mb-4">
                 Affordable bulk pricing
               </h1>
-              <p className="text-lg text-gray-400">
+              <p className="text-lg text-[#9CA3AF]">
                 Our content scales with your business.
               </p>
             </div>
@@ -572,11 +567,11 @@ export default function Home() {
                     <span className="mr-2 text-5xl font-semibold text-white tracking-tighter">
                       $0.09
                     </span>
-                    <span className="inline-block pb-2 text-lg text-gray-400">
+                    <span className="inline-block pb-2 text-lg text-[#9CA3AF]">
                       /word
                     </span>
                   </div>
-                  <span className="block text-gray-400 mb-8">
+                  <span className="block text-[#9CA3AF] mb-8">
                     For individuals or freelancers.
                   </span>
                   <div className="p-4 mb-8 border border-teal-800 rounded-xl">
@@ -584,7 +579,7 @@ export default function Home() {
                       <span className="text-white font-medium">
                         No-risk&nbsp;
                       </span>
-                      <span className="font-medium text-gray-400">
+                      <span className="font-medium text-[#9CA3AF]">
                         7 day trial.
                       </span>
                     </div>
@@ -592,23 +587,22 @@ export default function Home() {
                       <span className="text-white font-medium">
                         Up to 32,000&nbsp;
                       </span>
-                      <span className="font-medium text-gray-400">words</span>
+                      <span className="font-medium text-[#9CA3AF]">words</span>
                     </div>
                   </div>
-                  <a
+                  <div
                     className="group flex justify-center w-full h-12 p-1 text-center text-base text-white font-semibold rounded-lg"
-                    href="https://app.1secondcopy.com"
                   >
-                    <div className="inline-flex items-stretch w-full h-12 p-0.5 rounded-lg bg-gradient-to-b from-gray-500 via-gray-700 to-gray-700 hover:to-gray-800">
-                      <div className="flex w-full items-center justify-center px-4 bg-[#3b5444] group-hover:bg-opacity-40 rounded-md transition duration-300">
-                        <span>Get Started</span>
-                      </div>
+                    <div className="xs:flex-shrink-0 group relative flex xs:inline-flex w-7xl xs:w-auto items-center justify-center px-5 h-12 font-bold text-gray-300 bg-[#D95D39] rounded-lg transition-all duration-300 focus:outline-none">
+                      <div className="absolute top-0 left-0 w-full h-full rounded-lg ring-3 ring-[#ee7220] animate-pulse group-hover:ring-0 transition duration-300" />
+                      <div className="absolute inset-0 w-full h-full rounded-lg border border-black pointer-events-none" />
+                      <ModalForm formUrl="https://tally.so/r/mRkxMp" />
                     </div>
-                  </a>
+                  </div>
                 </div>
                 <div>
                   <div className="flex mb-10 items-start">
-                    <span className="flex-shrink-0 inline-flex w-5 h-5 items-center justify-center bg-[#19251d] rounded-full">
+                    <span className="flex-shrink-0 inline-flex w-5 h-5 items-center justify-center bg-[#1F2937] rounded-full">
                       <svg
                         width={14}
                         height={14}
@@ -687,11 +681,11 @@ export default function Home() {
                     <span className="mr-2 text-5xl font-semibold tracking-tighter">
                       $0.08
                     </span>
-                    <span className="inline-block pb-2 text-lg text-gray-400">
+                    <span className="inline-block pb-2 text-lg text-[#9CA3AF]">
                       /word
                     </span>
                   </div>
-                  <span className="block text-gray-400 mb-8">
+                  <span className="block text-[#9CA3AF] mb-8">
                     For larger teams &amp; affiliate websites over 32,000 words.
                   </span>
                   <div className="p-4 mb-8 border border-gray-200 rounded-xl">
@@ -710,16 +704,14 @@ export default function Home() {
                       </span>
                     </div>
                   </div>
-                  <a
-                    className="group relative flex items-center justify-center px-5 h-12 font-bold text-white bg-gradient-to-br from-lime-500 via-grean-200 to-teal-600 rounded-lg transition-all duration-300"
-                    href="https://app.1secondcopy.com"
-                  >
-                    <div className="absolute top-0 left-0 w-full h-full rounded-lg ring ring-green-300 animate-pulse group-hover:ring-0 transition duration-300" />
-                    <span>Get Started</span>
-                  </a>
+                  <div className="group relative flex items-center justify-center px-5 h-12 font-bold text-white bg-gradient-to-r from-[#f59e0b] via-[#ea580c] to-[#b91c1c] rounded-lg transition-all duration-300">
+                    <div className="xs:flex-shrink-0 group relative flex xs:inline-flex w-34 xs:w-auto items-center justify-center px-5 h-12 font-bold text-gray-300 rounded-lg transition-all duration-300 focus:outline-none">
+                      <ModalForm formUrl="https://tally.so/r/mRkxMp" />
+                    </div>
+                  </div>
                 </div>
                 <div className="flex mb-10 items-start">
-                  <span className="flex-shrink-0 inline-flex w-5 h-5 items-center justify-center bg-[#19251d] rounded-full">
+                  <span className="flex-shrink-0 inline-flex w-5 h-5 items-center justify-center bg-[#1F2937] rounded-full">
                     <svg
                       width={14}
                       height={14}
@@ -746,7 +738,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full lg:w-1/3 md:px-4">
-                <div className="p-8 mb-10 bg-[#19251d] border border-gray-700 rounded-xl">
+                <div className="p-8 mb-10 bg-[#1F2937] border border-gray-700 rounded-xl">
                   <div className="flex mb-8 items-center">
                     <span className="mr-3">
                       <svg
@@ -780,11 +772,11 @@ export default function Home() {
                     <span className="text-5xl font-semibold text-white tracking-tighter">
                       $0.07
                     </span>
-                    <span className="inline-block pb-2 text-lg text-gray-400">
+                    <span className="inline-block pb-2 text-lg text-[#9CA3AF]">
                       /word &amp; below
                     </span>
                   </div>
-                  <span className="block text-gray-400 mb-8">
+                  <span className="block text-[#9CA3AF] mb-8">
                     Contact our sales team for details.
                   </span>
                   <div className="p-4 mb-8 border border-gray-700 rounded-xl">
@@ -792,7 +784,7 @@ export default function Home() {
                       <span className="text-sm font-medium text-white">
                         Unlimited&nbsp;
                       </span>
-                      <span className="text-sm font-medium text-gray-400">
+                      <span className="text-sm font-medium text-[#9CA3AF]">
                         content.
                       </span>
                     </div>
@@ -800,20 +792,20 @@ export default function Home() {
                       <span className="text-sm font-medium text-white">
                         Automated posting &amp;&nbsp;
                       </span>
-                      <span className="text-sm font-medium text-gray-400">
+                      <span className="text-sm font-medium text-[#9CA3AF]">
                         delivery.
                       </span>
                     </div>
                   </div>
                   <a
-                    className="flex items-center justify-center w-full h-12 px-4 text-center text-base text-gray-900 hover:text-white font-bold bg-white hover:bg-gray-900 rounded-lg transition duration-200"
+                    className="flex items-center justify-center w-full h-12 px-4 text-center text-base text-gray-700 hover:text-white font-bold bg-white hover:bg-gray-900 rounded-lg transition duration-200"
                     href="/contact"
                   >
                     Contact Sales
                   </a>
                 </div>
                 <div className="flex mb-10 items-start">
-                  <span className="flex-shrink-0 inline-flex w-5 h-5 items-center justify-center bg-[#19251d] rounded-full">
+                  <span className="flex-shrink-0 inline-flex w-5 h-5 items-center justify-center bg-[#1F2937] rounded-full">
                     <svg
                       width={14}
                       height={14}
@@ -857,13 +849,13 @@ export default function Home() {
             </div>
             <div className="flex flex-wrap lg:px-10">
               <div className="w-full md:w-1/2 lg:w-1/3">
-                <div className="pt-10 px-6 xs:px-10 pb-14 bg-[#19251d] rounded-t-xl md:rounded-none md:rounded-tl-xl">
+                <div className="pt-10 px-6 xs:px-10 pb-14 bg-[#1F2937] rounded-t-xl md:rounded-none md:rounded-tl-xl">
                   <div className="flex items-center justify-between mb-8 pb-8 border-b border-gray-700">
                     <div>
                       <span className="block text-base font-semibold text-white">
                         Zak Blake
                       </span>
-                      <span className="text-base text-gray-400">
+                      <span className="text-base text-[#9CA3AF]">
                         CTO at Scaling With Systems
                       </span>
                     </div>
@@ -883,7 +875,7 @@ export default function Home() {
                       <span className="block text-base font-semibold text-white">
                         Albert Kim
                       </span>
-                      <span className="text-base text-gray-400">
+                      <span className="text-base text-[#9CA3AF]">
                         CEO at Greenline POS
                       </span>
                     </div>
@@ -897,13 +889,13 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full md:w-1/2 lg:w-1/3">
-                <div className="pt-10 px-6 xs:px-10 pb-14 bg-[#19251d] md:bg-transparent lg:bg-[#19251d] rounded-xl md:rounded-none lg:rounded-tr-xl">
+                <div className="pt-10 px-6 xs:px-10 pb-14 bg-[#1F2937] md:bg-transparent lg:bg-[#1F2937] rounded-xl md:rounded-none lg:rounded-tr-xl">
                   <div className="flex items-center justify-between mb-8 pb-8 border-b border-gray-700">
                     <div>
                       <span className="block text-base font-semibold text-white">
                         Scott Douglas Clary
                       </span>
-                      <span className="text-base text-gray-400">
+                      <span className="text-base text-[#9CA3AF]">
                         Founder at Success Story Podcast
                       </span>
                     </div>
@@ -917,13 +909,13 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full md:w-1/2 lg:w-1/3">
-                <div className="pt-10 px-6 xs:px-10 pb-14 lg:bg-transparent md:bg-[#19251d] bg-transparent rounded-r-xl lg:rounded-none">
+                <div className="pt-10 px-6 xs:px-10 pb-14 lg:bg-transparent md:bg-[#1F2937] bg-transparent rounded-r-xl lg:rounded-none">
                   <div className="flex items-center justify-between mb-8 pb-8 border-b border-gray-700">
                     <div>
                       <span className="block text-base font-semibold text-white">
                         Julian Figueroa
                       </span>
-                      <span className="text-base text-gray-400">
+                      <span className="text-base text-[#9CA3AF]">
                         Founder of Kinetic Finance
                       </span>
                     </div>
@@ -938,13 +930,13 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full md:w-1/2 lg:w-1/3">
-                <div className="pt-10 px-6 xs:px-10 pb-14 bg-[#19251d] rounded-b-xl md:rounded-r-none md:rounded-bl-xl lg:rounded-b-xl">
+                <div className="pt-10 px-6 xs:px-10 pb-14 bg-[#1F2937] rounded-b-xl md:rounded-r-none md:rounded-bl-xl lg:rounded-b-xl">
                   <div className="flex items-center justify-between mb-8 pb-8 border-b border-gray-700">
                     <div>
                       <span className="block text-base font-semibold text-white">
                         Jono Catliff
                       </span>
-                      <span className="text-base text-gray-400">
+                      <span className="text-base text-[#9CA3AF]">
                         CEO at DJING.ca
                       </span>
                     </div>
@@ -964,7 +956,7 @@ export default function Home() {
                       <span className="block text-base font-semibold text-white">
                         Gurinder Khabra
                       </span>
-                      <span className="text-base text-gray-400">
+                      <span className="text-base text-[#9CA3AF]">
                         Founder at Pacific Creative Group
                       </span>
                     </div>
@@ -987,18 +979,18 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="w-full mb-20 lg:mb-0 lg:pb-64">
               <div>
-                <span className="inline-flex items-center h-6 mb-6 px-2 text-sm font-medium text-white bg-[#19251d] rounded-full">
+                <span className="inline-flex items-center h-6 mb-6 px-2 text-sm font-medium text-white bg-[#1F2937] rounded-full">
                   FAQ
                 </span>
                 <h1 className="tracking-tight lg:text-[48px] lg:leading-15 sm:font-semibold sm:leading-12 text-[36px] font-semibold text-white mb-10 lg:w-lg md:w-xl w-sm">
                   Frequently asked questions
                 </h1>
                 <a
-                  className="xs:flex-shrink-0 group relative w-36 xs:w-auto flex xs:inline-flex items-center justify-center h-10 px-2 py-px font-bold text-gray-900 bg-[#a3e33a] rounded-lg transition-all duration-300 focus:outline-none"
+                  className="xs:flex-shrink-0 group relative w-36 xs:w-auto flex xs:inline-flex items-center justify-center h-10 px-2 py-px font-bold text-gray-300 bg-[#D95D39] rounded-lg transition-all duration-300 focus:outline-none"
                   href="/contact"
                 >
-                  <div className="absolute top-0 left-0 w-full h-full rounded-lg ring ring-[#44660e] animate-pulse group-hover:ring-0 transition duration-300" />
-                  <div className="absolute inset-0 w-full h-full rounded-lg border-2 border-black pointer-events-none" />
+                  <div className="absolute top-0 left-0 w-full h-full rounded-lg ring-3 ring-[#ee7220] animate-pulse group-hover:ring-0 transition duration-300" />
+                  <div className="absolute inset-0 w-full h-full rounded-lg border border-black pointer-events-none" />
                   <svg
                     width={16}
                     height={16}
@@ -1040,17 +1032,17 @@ export default function Home() {
             </div>
             <div className="w-full">
               <div>
-                <button className="group flex mb-3 items-center justify-between text-left w-full px-6 py-5 bg-[#19251d] rounded-xl border-3 border-transparent hover:border-[#a3e33a] ring ring-transparent hover:ring-[#a3e33a] focus:outline-none">
+                <button className="group flex mb-3 items-center justify-between text-left w-full px-6 py-5 bg-[#1F2937] rounded-xl border-3 border-transparent hover:border-[#FF6D00] ring ring-transparent hover:ring-[#D95D39] focus:outline-none">
                   <div className="pr-4">
                     <h6 className="font-semibold text-white">
                       What is 1SecondCopy?
                     </h6>
-                    <p className="hidden group-hover:block mt-2 text-sm text-gray-400">
+                    <p className="hidden group-hover:block mt-2 text-sm text-[#9CA3AF]">
                       We're a network of handpicked, high-quality writers and
                       editors that work on-demand for your convenience.
                     </p>
                   </div>
-                  <div className="flex-shrink-0 flex w-7 h-7 items-center justify-center bg-[#3b5444] rounded-full">
+                  <div className="flex-shrink-0 flex w-7 h-7 items-center justify-center bg-[#D95D39] rounded-full">
                     <svg
                       className="group-hover:hidden"
                       width={16}
@@ -1085,19 +1077,19 @@ export default function Home() {
                     </svg>
                   </div>
                 </button>
-                <button className="group flex mb-3 items-center justify-between text-left w-full px-6 py-5 bg-[#19251d] rounded-xl border-3 border-transparent hover:border-[#a3e33a] ring ring-transparent hover:ring-yellowGreen-800 focus:outline-none">
+                <button className="group flex mb-3 items-center justify-between text-left w-full px-6 py-5 bg-[#1F2937] rounded-xl border-3 border-transparent hover:border-[#FF6D00] ring ring-transparent hover:ring-yellowGreen-800 focus:outline-none">
                   <div className="pr-4">
                     <h6 className="font-semibold text-white">
                       How does it work?
                     </h6>
-                    <p className="hidden group-hover:block mt-2 text-sm text-gray-400">
+                    <p className="hidden group-hover:block mt-2 text-sm text-[#9CA3AF]">
                       It's easy - just enter a few details about your business,
                       add a title &amp; a couple of keywords, and our
                       world-class writers will whip up a high quality piece in
                       under three business days.
                     </p>
                   </div>
-                  <div className="flex-shrink-0 flex w-7 h-7 items-center justify-center bg-[#3b5444] rounded-full">
+                  <div className="flex-shrink-0 flex w-7 h-7 items-center justify-center bg-[#D95D39] rounded-full">
                     <svg
                       className="group-hover:hidden"
                       width={16}
@@ -1132,17 +1124,17 @@ export default function Home() {
                     </svg>
                   </div>
                 </button>
-                <button className="group flex mb-3 items-center justify-between text-left w-full px-6 py-5 bg-[#19251d] rounded-xl border-3 border-transparent hover:border-[#a3e33a] ring ring-transparent hover:ring-[#a3e33a] focus:outline-none">
+                <button className="group flex mb-3 items-center justify-between text-left w-full px-6 py-5 bg-[#1F2937] rounded-xl border-3 border-transparent hover:border-[#FF6D00] ring ring-transparent hover:ring-[#D95D39] focus:outline-none">
                   <div className="pr-4">
                     <h6 className="font-semibold text-white">
                       How much does it cost?
                     </h6>
-                    <p className="hidden group-hover:block mt-2 text-sm text-gray-400">
+                    <p className="hidden group-hover:block mt-2 text-sm text-[#9CA3AF]">
                       We charge a simple, flat fee: $0.09/word. You can buy
                       additional words in the app as needed.
                     </p>
                   </div>
-                  <div className="flex-shrink-0 flex w-7 h-7 items-center justify-center bg-[#3b5444] rounded-full">
+                  <div className="flex-shrink-0 flex w-7 h-7 items-center justify-center bg-[#D95D39] rounded-full">
                     <svg
                       className="group-hover:hidden"
                       width={16}
@@ -1177,17 +1169,17 @@ export default function Home() {
                     </svg>
                   </div>
                 </button>
-                <button className="group flex mb-3 items-center justify-between text-left w-full px-6 py-5 bg-[#19251d] rounded-xl border-3 border-transparent hover:border-[#a3e33a] ring ring-transparent hover:ring-[#a3e33a] focus:outline-none">
+                <button className="group flex mb-3 items-center justify-between text-left w-full px-6 py-5 bg-[#1F2937] rounded-xl border-3 border-transparent hover:border-[#FF6D00] ring ring-transparent hover:ring-[#D95D39] focus:outline-none">
                   <div className="pr-4">
                     <h6 className="font-semibold text-white">
                       Is there any risk?
                     </h6>
-                    <p className="hidden group-hover:block mt-2 text-sm text-gray-400">
+                    <p className="hidden group-hover:block mt-2 text-sm text-[#9CA3AF]">
                       Not at all! If you're not in love with your content in the
                       first week, let us know and we'll give you a 100% refund.
                     </p>
                   </div>
-                  <div className="flex-shrink-0 flex w-7 h-7 items-center justify-center bg-[#3b5444] rounded-full">
+                  <div className="flex-shrink-0 flex w-7 h-7 items-center justify-center bg-[#D95D39] rounded-full">
                     <svg
                       className="group-hover:hidden"
                       width={16}
@@ -1222,17 +1214,17 @@ export default function Home() {
                     </svg>
                   </div>
                 </button>
-                <button className="group flex items-center justify-between text-left w-full px-6 py-5 bg-[#19251d] rounded-xl border-3 border-transparent hover:border-[#a3e33a] ring ring-transparent hover:ring-[#a3e33a] focus:outline-none">
+                <button className="group flex items-center justify-between text-left w-full px-6 py-5 bg-[#1F2937] rounded-xl border-3 border-transparent hover:border-[#FF6D00] ring ring-transparent hover:ring-[#D95D39] focus:outline-none">
                   <div className="pr-4">
                     <h6 className="font-semibold text-white">
                       How is the content delivered?
                     </h6>
-                    <p className="hidden group-hover:block mt-2 text-sm text-gray-400">
+                    <p className="hidden group-hover:block mt-2 text-sm text-[#9CA3AF]">
                       Orders are delivered via Google Doc link with global
                       sharing access.
                     </p>
                   </div>
-                  <div className="flex-shrink-0 flex w-7 h-7 items-center justify-center bg-[#3b5444] rounded-full">
+                  <div className="flex-shrink-0 flex w-7 h-7 items-center justify-center bg-[#D95D39] rounded-full">
                     <svg
                       className="group-hover:hidden"
                       width={16}
@@ -1291,30 +1283,30 @@ export default function Home() {
                 Get Started
               </span>
               <h1 className=" tracking-tight text-4xl sm:text-5xl font-bold text-white mb-10">
-                Outsource your writing and build a reliable content machine.
+                Outsource your Media Buying and build your business for growth
               </h1>
               <a
-                className="group relative flex xs:inline-flex items-center justify-center px-5 h-12 font-bold text-sm text-gray-900 bg-[#a3e33a] rounded-lg transition-all duration-300 w-54 mx-auto"
+                className="group relative flex xs:inline-flex items-center justify-center px-5 h-12 font-bold text-sm text-gray-300 bg-[#D95D39] rounded-lg transition-all duration-300 w-54 mx-auto"
                 href="https://app.1secondcopy.com"
               >
-                <div className="absolute top-0 left-0 w-full h-full rounded-lg ring ring-[#44660e] animate-pulse group-hover:ring-0 transition duration-300" />
-                <div className="absolute inset-0 w-full h-full rounded-lg border-2 border-black pointer-events-none" />
+                <div className="absolute top-0 left-0 w-full h-full rounded-lg ring-3 ring-[#ee7220] animate-pulse group-hover:ring-0 transition duration-300" />
+                <div className="absolute inset-0 w-full h-full rounded-lg border border-black pointer-events-none" />
                 <span className="mr-2">Start your no-risk trial</span>
                 <span className="transform group-hover:translate-x-1 transition duration-200">
                   <svg
-                    width={17}
-                    height={16}
-                    viewBox="0 0 17 16"
-                    fill="none"
                     xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="lucide lucide-arrow-right"
                   >
-                    <path
-                      d="M4.5 8H12.8333M12.8333 8L8.83334 4M12.8333 8L8.83334 12"
-                      stroke="#041109"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
                   </svg>
                 </span>
               </a>
@@ -1334,13 +1326,13 @@ export default function Home() {
                     href="/"
                   >
                     <img
-                      className="h-9 rounded-lg ring-2 ring-white mr-2"
+                      className="h-9 rounded-lg ring-3 ring-white mr-2"
                       src="/1secondcopy_icon.png"
                       alt={``}
                     />
                     <p>1SecondCopy</p>
                   </a>
-                  <span className="block text-lg text-gray-400 max-w-xs mt-6">
+                  <span className="block text-lg text-[#9CA3AF] max-w-xs mt-6">
                     We hired the top 1% of writers so you don't have to. Get
                     high quality articles &amp; posts in just 3 days.
                   </span>
@@ -1355,7 +1347,7 @@ export default function Home() {
                     <ul>
                       <li className="mb-6">
                         <a
-                          className="inline-block text-lg text-gray-400 hover:text-white"
+                          className="inline-block text-lg text-[#9CA3AF] hover:text-white"
                           href="/agencies"
                         >
                           Agencies
@@ -1363,7 +1355,7 @@ export default function Home() {
                       </li>
                       <li className="mb-6">
                         <a
-                          className="inline-block text-lg text-gray-400 hover:text-white"
+                          className="inline-block text-lg text-[#9CA3AF] hover:text-white"
                           href="/about#services"
                         >
                           Services
@@ -1371,7 +1363,7 @@ export default function Home() {
                       </li>
                       <li className="mb-6">
                         <a
-                          className="inline-block text-lg text-gray-400 hover:text-white"
+                          className="inline-block text-lg text-[#9CA3AF] hover:text-white"
                           href="/#pricing"
                         >
                           Pricing
@@ -1386,7 +1378,7 @@ export default function Home() {
                     <ul>
                       <li className="mb-6">
                         <a
-                          className="inline-block text-lg text-gray-400 hover:text-white"
+                          className="inline-block text-lg text-[#9CA3AF] hover:text-white"
                           href="/about"
                         >
                           About
@@ -1394,12 +1386,12 @@ export default function Home() {
                       </li>
                       <li className="flex items-center mb-6">
                         <a
-                          className="inline-block mr-2 text-lg text-gray-400 hover:text-white"
+                          className="inline-block mr-2 text-lg text-[#9CA3AF] hover:text-white"
                           href="/careers"
                         >
                           <span>Careers</span>
                         </a>
-                        <span className="inline-flex h-6 px-2 items-center text-white bg-[#579e6c] rounded-full">
+                        <span className="inline-flex h-6 px-2 items-center text-white bg-[#D95D39] rounded-full">
                           <svg
                             width={8}
                             height={8}
@@ -1416,7 +1408,7 @@ export default function Home() {
                       </li>
                       <li>
                         <a
-                          className="inline-block text-lg text-gray-400 hover:text-white"
+                          className="inline-block text-lg text-[#9CA3AF] hover:text-white"
                           href="/contact"
                         >
                           Contact Sales
@@ -1431,7 +1423,7 @@ export default function Home() {
                     <ul>
                       <li className="mb-6">
                         <a
-                          className="inline-block text-lg text-gray-400 hover:text-white"
+                          className="inline-block text-lg text-[#9CA3AF] hover:text-white"
                           href="/blog"
                         >
                           Blog
@@ -1439,7 +1431,7 @@ export default function Home() {
                       </li>
                       <li className="mb-6">
                         <a
-                          className="inline-block text-lg text-gray-400 hover:text-white"
+                          className="inline-block text-lg text-[#9CA3AF] hover:text-white"
                           href="/contact"
                         >
                           Support
@@ -1447,7 +1439,7 @@ export default function Home() {
                       </li>
                       <li className="mb-6">
                         <a
-                          className="inline-block text-lg text-gray-400 hover:text-white"
+                          className="inline-block text-lg text-[#9CA3AF] hover:text-white"
                           href="/privacy"
                         >
                           Privacy
@@ -1462,7 +1454,7 @@ export default function Home() {
         </div>
         <div className="container px-4 mx-auto">
           <div className="md:flex items-center justify-between">
-            <p className="text-gray-400 mb-10 md:mb-0">
+            <p className="text-[#9CA3AF] mb-10 md:mb-0">
               Made with love ❤️ © 2023 1SecondCopy. All rights reserved.
             </p>
             <div className="flex items-center">
