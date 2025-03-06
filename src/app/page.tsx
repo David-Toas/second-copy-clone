@@ -25,7 +25,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="__className_f70e54 scroll-smooth bg-[#111827]">
+    <div className="__className_f70e54 scroll-smooth bg-[#111827] w-full overflow-x-hidden">
       {/* header and hero  */}
       <section className=" pb-24 lg:mx-8">
         {/* header */}
@@ -134,17 +134,34 @@ export default function Home() {
               ></div>
             )}
             <div
-              className={`fixed top-0 right-0 h-full w-2/4 md:w-1/3 bg-[#111827] text-white z-50 p-6 transform transition-transform duration-300 ease-in-out ${
+              className={`fixed top-0 right-0 h-full w-full sm:w-2/3 md:w-1/3 bg-[#111827] text-white z-50 p-6 transform transition-transform duration-300 ease-in-out ${
                 isOpen ? "translate-x-0" : "translate-x-full"
               }`}
             >
-              
-              <button
+              <div className="flex items-center justify-between mt-5">
+                
+                <a
+                  className="flex gap-2 items-center text-white text-xl font-bold"
+                  href="/"
+                >
+                  <img
+                    className="h-9 rounded-lg ring-3 ring-white mr-2"
+                    src="/1secondcopy_icon.png"
+                    alt=""
+                  />
+                  <p className="font-bold text-[20px] leading-[30px]">
+                    1SecondCopy
+                  </p>
+                </a>
+                <button
                 onClick={() => setIsOpen(false)}
-                className="absolute top-4 right-4 text-white hover:text-gray-300 mt-5 mr-4"
+                className=" top-4 right-4 text-white hover:text-gray-300  mr-4"
               >
                 ✕
               </button>
+              </div>
+              
+              
               <nav className="flex flex-col mt-24 space-y-4 ml-3">
                 <a
                   className="text-[#bfb691] text-sm hover:text-white mb-10"
@@ -202,20 +219,21 @@ export default function Home() {
                 We hired the top 1% of Media buyers so you dont have to. Get
                 high quality media strategies and plans in just 3 days
               </p>
-              <div className="xs:flex lg:flex flex justify-center gap-3 max-w-md mx-auto mb-2">
+              <div className="xs:flex md:flex lg:flex justify-center gap-3 max-w-md mx-auto mb-2">
                 <input
                   className="w-full h-12 mb-3 xs:mb-0 xs:mr-3 p-3 text-[#9CA3AF] placeholder-gray-500 bg-[#1F2937] outline-none ring ring-transparent focus:ring-[#FF6D00] focus:ring-3 rounded-lg"
                   type="email"
                   placeholder="Your email"
                   id="email"
                 />
-                <div className="xs:flex-shrink-0 group relative flex xs:inline-flex w-34 xs:w-auto items-center justify-center px-5 h-12 font-bold text-gray-300 rounded-lg transition-all duration-300 focus:outline-none">
+                <div className="xs:flex-shrink-0 group relative flex xs:inline-flex lg:w-34 md:w-32 sm:w-72 xs:w-auto items-center justify-center px-5 h-12 font-bold text-gray-300 rounded-lg transition-all duration-300 focus:outline-none">
                   <div className="absolute top-0 left-0 w-full h-full rounded-lg ring-3 ring-[#ee7220] animate-pulse group-hover:ring-0 transition duration-300" />
                   <div className="absolute inset-0 w-full h-full rounded-lg border bg-[#D95D39] border-black pointer-events-none" />
                   <ModalForm formUrl="https://tally.so/r/mRkxMp" />
                 </div>
               </div>
-              <div className="flex lg:flex-row items-center justify-center xs:flex-row w-[350px] mx-auto">
+              {/* <div className="flex-col lg:flex-row items-center justify-center xs:flex-row w-[350px] mx-auto mt-5"> */}
+              <div className="flex flex-col md:flex-row items-center justify-center w-[350px] mx-auto mt-5 gap-2">
                 <span className="block text-sm text-[#9CA3AF] opacity-50">
                   7-day money-back guarantee
                 </span>
