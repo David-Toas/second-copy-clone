@@ -6,7 +6,6 @@
 import ModalForm from "@/components/ModalForm";
 import { useEffect, useState } from "react";
 
-
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -138,7 +137,6 @@ export default function Home() {
               }`}
             >
               <div className="flex items-center justify-between mt-5">
-                
                 <a
                   className="flex gap-2 items-center text-white text-xl font-bold"
                   href="/"
@@ -153,14 +151,13 @@ export default function Home() {
                   </p>
                 </a>
                 <button
-                onClick={() => setIsOpen(false)}
-                className=" top-4 right-4 text-white hover:text-gray-300  mr-4"
-              >
-                ✕
-              </button>
+                  onClick={() => setIsOpen(false)}
+                  className=" top-4 right-4 text-white hover:text-gray-300  mr-4"
+                >
+                  ✕
+                </button>
               </div>
-              
-              
+
               <nav className="flex flex-col mt-24 space-y-4 ml-3">
                 <a
                   className="text-[#bfb691] text-sm hover:text-white mb-10"
@@ -231,21 +228,21 @@ export default function Home() {
                   <ModalForm formUrl="https://tally.so/r/mRkxMp" />
                 </div>
               </div>
-              {/* <div className="flex-col lg:flex-row items-center justify-center xs:flex-row w-[350px] mx-auto mt-5"> */}
-              <div className="flex flex-col md:flex-row items-center justify-center w-[350px] mx-auto mt-5 gap-2">
-                <span className="block text-sm text-[#9CA3AF] opacity-50">
+
+              <div className="flex flex-col xs:flex-row items-center justify-center">
+                <span className="block text-sm text-gray-400 opacity-50">
                   7-day money-back guarantee
                 </span>
-                <span className="inline-block my-4 xs:my-0 mx-auto xs:mx-">
+                <span className="inline-block my-4 xs:my-0 mx-auto xs:mx-4">
                   <svg
-                    width={12}
-                    height={12}
+                    width="12"
+                    height="12"
                     viewBox="0 0 12 12"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <g clipPath="url(#clip0_3008_28918)">
-                      <mask
+                    <mask
                         id="mask0_3008_28918"
                         style={{ maskType: "luminance" }}
                         maskUnits="userSpaceOnUse"
@@ -254,7 +251,7 @@ export default function Home() {
                         width={12}
                         height={12}
                       >
-                        <path d="M12 0H0V12H12V0Z" fill="white" />
+                        <path d="M12 0H0V12H12V0Z" fill="white"></path>
                       </mask>
                       <g mask="url(#mask0_3008_28918)">
                         <path
@@ -262,12 +259,12 @@ export default function Home() {
                           clipRule="evenodd"
                           d="M0 6L4.57763e-07 0H6H12V6C8.6868 6 6.00078 3.3145 6 0.00143555C5.99922 3.3145 3.31322 6 0 6ZM6 12C6 8.68626 8.68632 6 12 6V12H6ZM6 12C6 8.68626 3.31371 6 0 6V12H6Z"
                           fill="#4B6354"
-                        />
+                        ></path>
                       </g>
                     </g>
                   </svg>
                 </span>
-                <span className="block text-sm text-[#9CA3AF] opacity-50">
+                <span className="block text-sm text-gray-400 opacity-50">
                   Unlimited revisions
                 </span>
               </div>
@@ -355,14 +352,13 @@ export default function Home() {
                           1
                         </div>
                       </div>
-
                       <div className="block">
-                        <p className="text-white font-bold leading-6 text-md w-80">
-                          No more hiring, managing, or dealing with media buyers
+                        <p className="text-white font-bold text-md">
+                        No more hiring, managing, or dealing with media buyers
                         </p>
                         <p className="text-[#9CA3AF] text-sm mt-2">
-                          We take care of all of the comms &amp; busywork for
-                          you.
+                        We take care of all of the comms &amp; busywork for
+                        you.
                         </p>
                       </div>
                     </button>
@@ -374,11 +370,11 @@ export default function Home() {
                       </div>
                       <div className="block">
                         <p className="text-white font-bold text-md">
-                          Extraordinarily simple to use
+                        Extraordinarily simple to use
                         </p>
-                        <p className="text-[#9CA3AF] text-sm mt-2 w-84">
-                          Complete your media brief and we will take care of the
-                          rest.
+                        <p className="text-[#9CA3AF] text-sm mt-2">
+                        Complete your media brief and we will take care of the
+                        rest.
                         </p>
                       </div>
                     </button>
@@ -620,9 +616,7 @@ export default function Home() {
                       <span className="font-medium text-[#9CA3AF]">words</span>
                     </div>
                   </div>
-                  <div
-                    className="group flex justify-center w-full h-12 p-1 text-center text-base text-white font-semibold rounded-lg"
-                  >
+                  <div className="group flex justify-center w-full h-12 p-1 text-center text-base text-white font-semibold rounded-lg">
                     <div className="xs:flex-shrink-0 group relative flex xs:inline-flex w-7xl xs:w-auto items-center justify-center px-5 h-12 font-bold text-gray-300 bg-[#D95D39] rounded-lg transition-all duration-300 focus:outline-none">
                       <div className="absolute top-0 left-0 w-full h-full rounded-lg ring-3 ring-[#ee7220] animate-pulse group-hover:ring-0 transition duration-300" />
                       <div className="absolute inset-0 w-full h-full rounded-lg border border-black pointer-events-none" />
