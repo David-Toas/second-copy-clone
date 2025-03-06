@@ -18,11 +18,10 @@ export default function Home() {
     };
 
     window.addEventListener("resize", handleResize);
-    
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const closeMenu = () => setIsOpen(false);
 
   return (
     <div className="__className_f70e54 scroll-smooth bg-[#111827] w-full overflow-x-hidden">
@@ -130,7 +129,7 @@ export default function Home() {
             {isOpen && (
               <div
                 className="fixed inset-0 bg-transparent backdrop-blur-none bg-opacity-50 z-40"
-                onClick={() => setIsOpen(false)}
+                onClick={closeMenu}
               ></div>
             )}
             <div
