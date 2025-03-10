@@ -109,7 +109,7 @@ export default function Home() {
                 <div className="hidden lg:block ml-12">
                   <a
                     className="inline-flex items-center justify-center h-10 mr-4 px-4 text-center text-sm text-white font-semibold border border-gray-800 rounded-lg"
-                    href="https://app.1secondcopy.com/login/"
+                    href="/login"
                   >
                     Login
                   </a>
@@ -185,7 +185,7 @@ export default function Home() {
                 </a>
                 <a
                   className="text-[#bfb691] text-sm hover:text-white mb-10"
-                  href="https://app.1secondcopy.com/login/"
+                  href="/login"
                 >
                   Login
                 </a>
