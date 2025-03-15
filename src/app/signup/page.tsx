@@ -589,7 +589,8 @@ const Signup: React.FC = () => {
           )}
         </div>
       </div>
-      {/* image */}
+
+
       <div className="w-full h-full overflow-hidden hidden md:block">
         <img
           src="signup.png"
