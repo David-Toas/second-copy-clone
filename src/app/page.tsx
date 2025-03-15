@@ -113,10 +113,13 @@ export default function Home() {
                   >
                     Login
                   </a>
-                  <div className="group inline-block justify-center p-1 text-center text-sm text-white font-semibold rounded-lg">
+                  <div className="group inline-block justify-center p-5 text-center text-sm text-white font-semibold rounded-lg">
                     <div className="inline-flex items-stretch h-10 p-0.5 rounded-lg bg-gradient-to-b from-gray-500 via-gray-700 to-gray-700 hover:to-gray-800">
-                      <div className="bg-[#D95D39] flex items-center justify-center rounded-lg">
-                        <ModalForm formUrl="https://tally.so/r/mRkxMp" />
+                      <div
+                        className="bg-[#D95D39] flex items-center justify-center rounded-lg
+                      xs:flex-shrink-0 group relative xs:inline-flex w-34 xs:w-auto  px-5 h-12 font-bold text-gray-300 transition-all duration-300 focus:outline-none"
+                      >
+                        <a href="/signup">Get Started</a>
                       </div>
                     </div>
                   </div>
@@ -191,9 +194,14 @@ export default function Home() {
                 </a>
 
                 <div className="mt-16 xs:flex-shrink-0 group relative flex xs:inline-flex w-34 xs:w-auto items-center justify-center px-5 h-12 font-bold text-gray-300 bg-[#D95D39] rounded-lg transition-all duration-300 focus:outline-none">
-                  <div className="absolute top-0 left-0 w-full h-full rounded-lg ring-3 ring-[#ee7220] animate-pulse group-hover:ring-0 transition duration-300" />
-                  <div className="absolute inset-0 w-full h-full rounded-lg border border-black pointer-events-none" />
-                  <ModalForm formUrl="https://tally.so/r/mRkxMp" />
+                  <div className="absolute top-0 left-0 w-full h-full rounded-lg ring-3 ring-[#ee7220] animate-pulse group-hover:ring-0 transition duration-300">
+                    <div
+                      className="bg-[#D95D39] flex items-center justify-center rounded-lg
+                      xs:flex-shrink-0 group relative xs:inline-flex w-34 xs:w-auto  px-5 h-12 font-bold text-gray-300 transition-all duration-300 focus:outline-none"
+                    >
+                      <a href="/signup">Get Started</a>
+                    </div>
+                  </div>
                 </div>
               </nav>
             </div>
@@ -242,7 +250,7 @@ export default function Home() {
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <g clipPath="url(#clip0_3008_28918)">
-                    <mask
+                      <mask
                         id="mask0_3008_28918"
                         style={{ maskType: "luminance" }}
                         maskUnits="userSpaceOnUse"
@@ -354,11 +362,11 @@ export default function Home() {
                       </div>
                       <div className="block">
                         <p className="text-white font-bold text-md">
-                        No more hiring, managing, or dealing with media buyers
+                          No more hiring, managing, or dealing with media buyers
                         </p>
                         <p className="text-[#9CA3AF] text-sm mt-2">
-                        We take care of all of the comms &amp; busywork for
-                        you.
+                          We take care of all of the comms &amp; busywork for
+                          you.
                         </p>
                       </div>
                     </button>
@@ -370,11 +378,11 @@ export default function Home() {
                       </div>
                       <div className="block">
                         <p className="text-white font-bold text-md">
-                        Extraordinarily simple to use
+                          Extraordinarily simple to use
                         </p>
                         <p className="text-[#9CA3AF] text-sm mt-2">
-                        Complete your media brief and we will take care of the
-                        rest.
+                          Complete your media brief and we will take care of the
+                          rest.
                         </p>
                       </div>
                     </button>
